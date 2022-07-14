@@ -7,3 +7,6 @@ footer{
   text-align: center;
   color: var(--gray);
 }
+.hide{
+  display: none;
+}

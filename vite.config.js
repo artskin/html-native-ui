@@ -11,6 +11,7 @@ export default defineConfig({
       port:3301,
       cors:true,
     },
+    base:'./',
     build:{
       outDir:'docs'
     }

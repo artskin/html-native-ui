@@ -43,6 +43,7 @@ number:
 number:
 <input type="date" placeholder="\u8BF7\u8F93\u5165">
 <footer>
-\xA9\uFE0F \u963F\u6C90
+<hr>
+\xA9\uFE0F\u963F\u6C90
 </footer>
 `;
