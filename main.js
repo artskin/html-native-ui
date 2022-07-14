@@ -46,6 +46,7 @@ number:
 number:
 <input type="date" placeholder="请输入">
 <footer>
-©️ 阿沐
+<hr>
+©️阿沐
 </footer>
 `
