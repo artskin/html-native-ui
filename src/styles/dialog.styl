@@ -1,0 +1,11 @@
+dialog{
+    top:50%;
+    right: 50%;
+    transform: translateX(100%) translateY(-50%) scale(1);
+    transition:all .2s;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+dialog:not([open]){
+    display: block;
+    transform: translateX(100%) translateY(-50%) scale(0);
+}
