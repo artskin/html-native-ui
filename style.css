@@ -3,10 +3,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  --title-bg:-webkit-linear-gradient( 120deg, #6633FF 30%, #41d1ff )
 }
 footer{
   text-align: center;
   color: var(--gray);
+}
+h1{
+  background: var(--title-bg);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display: inline-block;
+}
+.center{
+  text-align: center;
 }
 .hide{
   display: none;

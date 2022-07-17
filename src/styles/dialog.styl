@@ -4,8 +4,26 @@ dialog{
     transform: translateX(100%) translateY(-50%) scale(1);
     transition:all .2s;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-color: var(--primary);
 }
 dialog:not([open]){
     display: block;
     transform: translateX(100%) translateY(-50%) scale(0);
+}
+
+details[open] summary{
+    border-bottom: 1px dashed var(--gray)
+    padding-bottom: .6em;
+}
+::marker {
+    color: var(--primary);
+}
+details{
+    &::marker{
+        color: #c00;
+    }
+    &>div{
+        padding-left: 60px;
+        line-height: 3;
+    }
 }

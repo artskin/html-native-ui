@@ -4,8 +4,9 @@
 button,input{
   font-size:var(--size,14px);
   transition:all .1s;
+  margin: 0 .4em;
   &:active{
-    box-shadow:0 0 0 .26em rgba(1 117 216,.07);
+    box-shadow:0 0 0 .26em var(--primary-shadow2);
   }
   &:focus{
     animation:spread .33s ease-in-out;
@@ -17,10 +18,11 @@ button,input{
 }
 
 //button-style
-button {
+button,input[type="button"] {
   border-radius:.2em;
   cursor:pointer;
-  padding:.4em 1em;
+  line-height: 1;
+  padding:.5715em 1em;
   border:1px solid var(--gray);
 }
 createButton('primary',--primary)
@@ -189,10 +191,10 @@ input[data-type="tick"]{
     box-shadow:0 0 0 0 rgba(0 0 0,0);
   }
   70%{
-    box-shadow:0 0 0 .26em rgba(1 117 216,.14);
+    box-shadow:0 0 0 .26em var(--primary-shadow);
   }
   100%{
-    box-shadow:0 0 0 .26em rgba(1 117 216,.07);
+    box-shadow:0 0 0 .26em var(--primary-shadow2);
   }
 }
 
