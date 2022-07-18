@@ -10,10 +10,14 @@ footer{
   color: var(--gray);
 }
 h1{
+  
+  
+}
+.website-title{text-align: center;}
+.website-title strong{
   background: var(--title-bg);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  display: inline-block;
 }
 .center{
   text-align: center;

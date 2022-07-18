@@ -9,7 +9,7 @@ button,input{
     box-shadow:0 0 0 .26em var(--primary-shadow2);
   }
   &:focus{
-    animation:spread .33s ease-in-out;
+    animation:spread .36s ease-in-out;
   }
   &:disabled{
     pointer-events:none;
@@ -24,6 +24,9 @@ button,input[type="button"] {
   line-height: 1;
   padding:.5715em 1em;
   border:1px solid var(--gray);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 createButton('primary',--primary)
 createButton('warning',--warning)
@@ -126,6 +129,7 @@ input[type="radio"] {
   height:1.4em;
   border-radius:2em;
   position:relative;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   &::before,&::after{
     content:'';
     display:block;

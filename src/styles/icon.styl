@@ -1,0 +1,35 @@
+[class*=" ico-"], [class^=ico-]{
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 50%;
+  width: 1.2em;
+  height: 1.2em;
+  display: inline-flex;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ico-warning{
+  border: 1.5px solid;
+  color: currentColor;
+  margin-right: .2em;
+  &::before{
+    content: '';
+    height: .2em;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    width:.2em;
+    transform: translateX(-50%) translateY(-50%);
+    background: currentColor;
+    box-shadow: inset 0 0 0 32px, 0 3px, 0 5px, 0 10px;
+  }
+}
