@@ -10,6 +10,8 @@ buttonFn(type){
   border:1px solid var(type);
   background:var(type);
   color:#fff;
+  --shadow:var(type + -shadow)
+  --shadow2:var(type + -shadow2)
   &:hover{
     background-color:var(type+-hover);
     border-color:var(type+-hover);

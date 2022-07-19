@@ -27,13 +27,20 @@ button,input[type="button"] {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  &:focus-visible{
+    border: none;
+  }
+  outline:none;
 }
 createButton('primary',--primary)
 createButton('warning',--warning)
 createButton('danger',--danger)
-  
+button[size="big"]{
+  --size:22px
+}
 
-//checkbox-switch
+//checkbox
 input[type="checkbox"] {
   position: relative;
   appearance: none;
@@ -43,6 +50,7 @@ input[type="checkbox"] {
   border-radius: .2em;
   border:1px solid #ccc;
   box-sizing:border-box;
+  outline:none;
   //transform:scale(1.4);
   &::before,&::after{
     content:'';
@@ -77,13 +85,13 @@ input[type="checkbox"] {
 //checkbox-switch
 input[type="checkbox"][role="switch"] {
   position: relative;
-  width: 2em;
-  height: 1em;
+  width: 2.8em;
+  height: 1.4em;
   background-color: var(--gray);
   border-radius: 1em;
-  transform:scale(1.4);
+  //transform:scale(1.4);
   border: none;
-  outline: none;
+  
   -webkit-appearance: none;
   transition: all .2s ease-out;
   cursor:pointer;
@@ -94,28 +102,28 @@ input[type="checkbox"][role="switch"] {
     position: absolute;
     top: .1em;
     left: .1em;
-    width: .8em;
-    height: .8em;
+    width: 1.2em;
+    height: 1.2em;
     background-color: #fff;
-    border-radius: .5em;
+    border-radius: .6em;
     transition: all .2s ease;
     transform: scale(1);
   }
   &:active{
     &::after{
-      width: 1em;
+      width: 1.5em;
     }
   }
   &:checked {
     background-color: var(--primary);
     &::after {
-      left: 1.1em;
+      left: 1.5em;
       border:none;
       transform:scale(1);
     }
     &:active{
       &::after{
-        left: .9em;
+        left: 1.2em;
       } 
     } 
   }
@@ -129,6 +137,7 @@ input[type="radio"] {
   height:1.4em;
   border-radius:2em;
   position:relative;
+  outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   &::before,&::after{
     content:'';
@@ -195,10 +204,10 @@ input[data-type="tick"]{
     box-shadow:0 0 0 0 rgba(0 0 0,0);
   }
   70%{
-    box-shadow:0 0 0 .26em var(--primary-shadow);
+    box-shadow:0 0 0 .26em var(--shadow);
   }
   100%{
-    box-shadow:0 0 0 .26em var(--primary-shadow2);
+    box-shadow:0 0 0 .26em var(--shadow2);
   }
 }
 
@@ -208,7 +217,7 @@ input[type=number],
 input[type=date]{
   border:1px solid var(--gray);
   padding:.4em .5em;
-  border-radius:2px;
+  border-radius:var(--radius-val);
   &:focus{
     border-color:var(--primary);
     box-shadow:0 0 0 .2em rgba(1 117 216,.1)

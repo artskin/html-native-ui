@@ -5,6 +5,7 @@ dialog{
     transition:all .2s;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     border-color: var(--primary);
+    border-radius: calc(var(--radius-val) * 2);
 }
 dialog:not([open]){
     display: block;
@@ -15,6 +16,9 @@ details[open] summary{
     border-bottom: 1px dashed var(--gray)
     padding-bottom: .6em;
 }
+details[open] > summary:first-of-type{
+    list-style-type: disclosure-open;
+}
 ::marker {
     color: var(--primary);
 }
@@ -23,7 +27,7 @@ details{
         color: #c00;
     }
     &>div{
-        padding-left: 60px;
+        padding-left: 10px;
         line-height: 3;
     }
 }

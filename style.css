@@ -1,9 +1,12 @@
+:root{
+  --title-bg:-webkit-linear-gradient( 120deg, #6633FF 30%, #41d1ff )
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  --title-bg:-webkit-linear-gradient( 120deg, #6633FF 30%, #41d1ff )
+  
 }
 footer{
   text-align: center;
@@ -13,11 +16,26 @@ h1{
   
   
 }
-.website-title{text-align: center;}
-.website-title strong{
+.website-title{text-align: center;display: flex;
+  padding-top: 20px;
+justify-content: center;align-items: center;}
+.website-title h1{
   background: var(--title-bg);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  margin-left: 10px;
+}
+details dl{
+  display: flex;
+}
+details dl dt{
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+details dl dd{flex: 1;margin: 0;
+ vertical-align: middle;
 }
 .center{
   text-align: center;

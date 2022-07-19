@@ -10,8 +10,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-radius: 50%;
-  width: 1.2em;
-  height: 1.2em;
+  width: 1em;
+  height: 1em;
   display: inline-flex;
   box-sizing: border-box;
   position: relative;
@@ -20,16 +20,20 @@
 .ico-warning{
   border: 1.5px solid;
   color: currentColor;
-  margin-right: .2em;
   &::before{
     content: '';
-    height: .2em;
     position: absolute;
     left: 50%;
-    top: 30%;
-    width:.2em;
+    top: 26%;
+    width:.16em;
+    height: .15em;
     transform: translateX(-50%) translateY(-50%);
     background: currentColor;
-    box-shadow: inset 0 0 0 32px, 0 3px, 0 5px, 0 10px;
+    box-shadow: inset 0 0 0 1em, 0 .1em, 0 .2em, 0 .43em;
+  }
+}
+button {
+  [class*=" ico-"], [class^=ico-]{
+    margin-right: .2em;
   }
 }

@@ -7,33 +7,35 @@
     <title>Html Native UI</title>
   </head>
   <body>
-    <p class="center">
-      <img src="./favicon.svg" height="60" alt="">
-    </p>
+    <div class="website-title">
+      <img src="./favicon.svg" height="36" alt="">
+      <h1>Native UI</h1>
+    </div>
+    <p>HTML5 Native UI，充分利用html5的原生属性和方法</p>
+    <a href="https://github.com/artskin/html-native-ui" target="_blank">Github</a>
     <template id="eles">
-      <h1 class="website-title"><strong>Native UI!</strong></h1>
-        <p>HTML-Native-UI，充分利用html5的原生属性和方法</p>
-        <a href="https://github.com/artskin/html-native-ui" target="_blank">Github</a>
+        
         <hr>
         <details open>
           <summary>button:</summary>
           <div>
-            default:
+            default:<br>
             <input type="button" value="确定">
             <button>确定</button>
           
             <br>
-            Type:
+            Type:<br>
             <button data-type="primary">主题</button>
             <button data-type="warning">警告</button>
             <button data-type="danger">危险</button>
             <br>
-            Size:
-            <button data-type="primary">主题</button>
+            Size:<br>
+            <button data-type="primary"><i class="ico-warning"></i> 主题</button>
             <button data-type="primary" style="--size:18px"><i class="ico-warning"></i> 确定</button>
-            <button data-type="primary" style="--size:22px">确定</button>
+            <button data-type="primary" style="--size:18px">确定</button>
+            <button data-type="primary" style="--size:22px"><i class="ico-warning"></i> 确定</button>
             <br>
-            Disabled:
+            Disabled:<br>
             <button data-type="primary" disabled>确定</button>
           </div>
         </details>
