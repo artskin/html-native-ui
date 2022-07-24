@@ -17,34 +17,40 @@
         
         <hr>
         <details open>
-          <summary>button:</summary>
+          <summary>Button:</summary>
           <div>
             default:<br>
             <input type="button" value="确定">
             <button>确定</button>
           
-            <br>
-            Type:<br>
+            <br>Type:<br>
             <button data-type="primary">主题</button>
             <button data-type="warning">警告</button>
             <button data-type="danger">危险</button>
-            <br>
-            Size:<br>
+            <br>Size:<br>
             <button data-type="primary"><i class="ico-warning"></i> 主题</button>
             <button data-type="primary" style="--size:18px"><i class="ico-warning"></i> 确定</button>
             <button data-type="primary" style="--size:18px">确定</button>
             <button data-type="primary" style="--size:22px"><i class="ico-warning"></i> 确定</button>
-            <br>
-            Disabled:<br>
+            <br>Disabled:<br>
             <button data-type="primary" disabled>确定</button>
           </div>
         </details>
       <hr>
-      checkbox:
-      <input type="checkbox">
-      <input type="checkbox" checked style="--size:18px">
-      <input type="checkbox" style="--size:22px">
-      <input type="checkbox" disabled style="--size:30px">
+
+      <details open>
+        <summary>Checkbox:</summary>
+        <div>
+          <input type="checkbox">
+          <br>Size:<br>
+          <input type="checkbox" checked style="--size:18px">
+          <input type="checkbox" style="--size:22px">
+          <br>Disabled:<br>
+          <input type="checkbox" disabled style="--size:30px">
+        </div>
+      </details>
+      
+      
       <hr>
       switch:
       <input role="switch" type="checkbox">
@@ -79,6 +85,7 @@
           <button>关闭</button>
         </form>
       </dialog>
+      <div class="dialog-mask"></div>
     
       <footer>
       <hr>

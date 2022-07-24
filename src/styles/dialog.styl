@@ -1,33 +1,45 @@
 dialog{
     top:50%;
-    right: 50%;
-    transform: translateX(100%) translateY(-50%) scale(1);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%) scale(1);
     transition:all .2s;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     border-color: var(--primary);
     border-radius: calc(var(--radius-val) * 2);
-}
-dialog:not([open]){
-    display: block;
-    transform: translateX(100%) translateY(-50%) scale(0);
+    z-index :1;
+
+    &:not([open]){
+        display: block;
+        transform: translateX(-50%) translateY(-50%) scale(0);
+    }
+    &[open] + .dialog-mask{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.2);
+        left: 0;
+        top: 0;
+        z-index :0;
+    }
 }
 
-details[open] summary{
-    border-bottom: 1px dashed var(--gray)
-    padding-bottom: .6em;
-}
-details[open] > summary:first-of-type{
-    list-style-type: disclosure-open;
-}
-::marker {
-    color: var(--primary);
-}
 details{
-    &::marker{
-        color: #c00;
+    &[open]{
+        summary{
+            border-bottom: px dashed var(--gray)
+            padding-bottom: .6em;
+        }
+        & > summary:first-of-type{
+            list-style-type: disclosure-open;
+        }
+    }
+    
+    ::marker {
+        color: var(--primary);
     }
     &>div{
         padding-left: 10px;
-        line-height: 3;
+        line-height: 2;
     }
 }

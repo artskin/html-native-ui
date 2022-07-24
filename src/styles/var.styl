@@ -5,6 +5,7 @@ warning = #faad14;
 danger = #ff4d4f;
 gray = #dadada;
 
+
 /* css vars */
 :root{
   colorGroup(--primary,primary)
@@ -12,4 +13,24 @@ gray = #dadada;
   colorGroup(--danger,danger)
   colorGroup(--gray,gray)
   --radius-val:2px;
+  --shadow:var(--primary-shadow);
+  --shadow2:var(--primary-shadow2);
+}
+
+html{
+  font-size: 16px;
+  --size:16px;
+}
+@media screen and (max-width: 1380px) {
+  html{
+    font-size: 12px;
+    --size:12px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  html{
+    font-size: 16px;
+    --size:16px;
+  }
 }
