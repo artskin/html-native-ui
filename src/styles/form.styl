@@ -81,7 +81,9 @@ input[type="checkbox"] {
   }
   &:disabled{
     background:var(--gray-hover);
-    
+    &:after{
+      opacity:.66;
+    }
   }
 }
 
@@ -217,6 +219,7 @@ input[data-type="tick"]{
 //text
 input[type=text],
 input[type=number],
+input[type=password],
 input[type=date]{
   border:1px solid var(--gray);
   padding:.4em .5em;
@@ -237,5 +240,15 @@ input[type=number]{
   &::-webkit-inner-spin-button{
     display:block;
     //align-self:baseline;
+  }
+}
+
+
+//form
+form{
+  line-height: 3;
+  label{
+    width: var(--label-width);
+    text-align: var(--label-align,left)
   }
 }

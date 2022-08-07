@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Html Native UI</title>
     <script type="module" crossorigin src="./assets/index.d4601719.js"></script>
-    <link rel="stylesheet" href="./assets/index.a9865689.css">
+    <link rel="stylesheet" href="./assets/index.d313c119.css">
   </head>
   <body>
     <div class="website-title">
@@ -16,68 +16,123 @@
     <p>HTML5 Native UI，充分利用html5的原生属性和方法</p>
     <a href="https://github.com/artskin/html-native-ui" target="_blank">Github</a>
     <template id="eles">
-        
-        <hr>
-        <details open>
-          <summary>Button:</summary>
-          <div>
-            default:<br>
-            <input type="button" value="确定">
-            <button>确定</button>
-          
-            <br>Type:<br>
-            <button data-type="primary">主题</button>
-            <button data-type="warning">警告</button>
-            <button data-type="danger">危险</button>
-            <br>Size:<br>
-            <button data-type="primary"><i class="ico-warning"></i> 主题</button>
-            <button data-type="primary" style="--size:18px"><i class="ico-warning"></i> 确定</button>
-            <button data-type="primary" style="--size:18px">确定</button>
-            <button data-type="primary" style="--size:22px"><i class="ico-warning"></i> 确定</button>
-            <br>Disabled:<br>
-            <button data-type="primary" disabled>确定</button>
-          </div>
-        </details>
       <hr>
-
       <details open>
-        <summary>Checkbox:</summary>
+        <summary>Button: &lt;button&gt; / input [type="button"]</summary>
+        <div>
+          default:<br>
+          <input type="button" value="确定">
+          <button>确定</button>
+        
+          <br>Type:<br>
+          <button data-type="primary">主题</button>
+          <button data-type="warning">警告</button>
+          <button data-type="danger">危险</button>
+          <br>Size:<br>
+          <button data-type="primary"><i class="ico-warning"></i> 主题</button>
+          <button data-type="primary" style="--size:18px"><i class="ico-warning"></i> 确定</button>
+          <button data-type="primary" style="--size:18px">确定</button>
+          <button data-type="primary" style="--size:22px"><i class="ico-warning"></i> 确定</button>
+          <br>Disabled:<br>
+          <button data-type="primary" disabled>确定</button>
+        </div>
+      </details>
+      <hr>
+      <details open>
+        <summary>Checkbox: input [type="checkbox"]</summary>
         <div>
           <input type="checkbox">
           <br>Size:<br>
-          <input type="checkbox" checked style="--size:18px">
+          <input type="checkbox" checked style="--size:14px">
+          <input type="checkbox" style="--size:18px">
           <input type="checkbox" style="--size:22px">
           <br>Disabled:<br>
-          <input type="checkbox" disabled style="--size:30px">
+          <input type="checkbox" disabled>
+        </div>
+      </details>
+      <hr>
+      <details open>
+        <summary>Switch: input [type="checkbox" role="switch"] </summary>
+        <div>
+          <input role="switch" type="checkbox">
+          <br>Size:<br>
+          <input role="switch" type="checkbox" checked style="--size:14px">
+          <input role="switch" type="checkbox" checked style="--size:18px">
+          <input role="switch" type="checkbox" style="--size:22px">
+          <br>Disabled:<br>
+          <input role="switch" type="checkbox" disabled>
+        </div>
+      </details>
+      <hr>
+      <details open>
+        <summary>Radio: input [type="radio"]</summary>
+        <div>
+          <input type="radio">
+          <br>Size:<br>
+          <input name="sl" type="radio" checked  style="--size:14px">
+          <input name="sl" type="radio" style="--size:18px">
+          <input name="sl" type="radio" data-type="tick" style="--size:22px">
+          <br>Disabled:<br>
+          <input name="sl" type="radio" disabled data-type="tick">
         </div>
       </details>
       
+      <hr>
+      <details open>
+        <summary>input [type="text"]</summary>
+        <div>
+          <form action="" style="--label-width:50px;--label-align:right">
+            <label for="user">用户名：</label>
+            <input id="user" type="text" placeholder="请输入" style="--size:14px">
+            <br>
+            <label for="pwd">密 码：</label>
+            <input id="pwd" type="password" placeholder="请输入" style="--size:14px">
+          </form>
+          Disabled:
+          <input type="text" placeholder="请输入" disabled>
+        </div>
+      </details>
       
       <hr>
-      switch:
-      <input role="switch" type="checkbox">
-      <input role="switch" type="checkbox" checked style="--size:18px">
-      <input role="switch" type="checkbox" style="--size:22px">
-      <input role="switch" type="checkbox" disabled style="--size:30px">
+      <details open>
+        <summary>input [type="number"]</summary>
+        <div>
+          <input type="number" step="10" placeholder="请输入">
+        </div>
+      </details>
       <hr>
-    
-      radio:
-      <input name="sl" type="radio">
-      <input name="sl" type="radio" style="--size:18px">
-      <input name="sl" type="radio" checked data-type="tick" style="--size:22px">
-      <input name="sl" type="radio" disabled data-type="tick" style="--size:30px">
+      <details open>
+        <summary>Select: input[list]</summary>
+        <div>
+          <label for="ice-choice">选择:</label>
+          <input type="text" list="ice-list" id="ice-choice" />
+          <datalist id="ice-list">
+            <option value="Chocolate"/>
+            <option value="Coconut"/>
+            <option value="Mint"/>
+            <option value="Strawberry"/>
+            <option value="Vanilla"/>
+          </datalist>
+        </div>
+      </details>
+      
       <hr>
-    
-      text:
-      <input type="text" placeholder="请输入">
-      <input type="text" placeholder="请输入" style="--size:18px">
-      <input type="text" placeholder="请输入" disabled style="--size:18px">
+      <details open>
+        <summary>DatePicker: input[type="date"]</summary>
+        <div>
+          <label for="date">选择日期:</label>
+          <input id="date" type="date" placeholder="请输入">
+        </div>
+      </details>
       <hr>
-      number:
-      <input type="number" placeholder="请输入">
-      <hr>
-      number:
-      <input type="date" placeholder="请输入">
+      <details open>
+        <summary>Progress: meter</summary>
+        <div>
+          <meter value="0.6">60%</meter><br>
+          <progress value="0.2">60%</progress>
+        </div>
+      </details>
+
       <hr>
       dialog:
       <button id="showDialog">打开</button>
@@ -88,7 +143,7 @@
         </form>
       </dialog>
       <div class="dialog-mask"></div>
-    
+      
       <footer>
       <hr>
       ©️阿沐

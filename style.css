@@ -5,16 +5,10 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  
 }
 footer{
   text-align: center;
   color: var(--gray);
-}
-h1{
-  
-  
 }
 .website-title{text-align: center;display: flex;
   padding-top: 20px;
