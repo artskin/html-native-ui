@@ -5,11 +5,14 @@ button,input{
   font-size:var(--size,14px);
   transition:all .1s;
   margin: 0 .4em;
+  vertical-align: middle;
+  height :2.3333em;
+  box-sizing:border-box;
   &:active{
     box-shadow:0 0 0 .26em var(--primary-shadow2);
   }
   &:focus{
-    animation:spread .36s ease-in-out;
+    animation:spread .4s ease-in-out;
   }
   // &:focus-visible{
   //   animation:spread .36s ease-in-out;
@@ -208,10 +211,10 @@ input[data-type="tick"]{
   40%{
     box-shadow:0 0 0 0 rgba(0 0 0,0);
   }
-  70%{
-    box-shadow:0 0 0 .26em var(--shadow);
+  60%{
+    box-shadow:0 0 0 .3em var(--shadow);
   }
-  100%{
+  90%{
     box-shadow:0 0 0 .26em var(--shadow2);
   }
 }
@@ -250,5 +253,21 @@ form{
   label{
     width: var(--label-width);
     text-align: var(--label-align,left)
+  }
+}
+
+//color
+input[type="color"]{
+  border:none;
+  padding:0;
+  //margin:0;
+  border-radius:var(--radius-val);
+  overflow:hidden;
+  vertical-align: middle;
+  &::-webkit-color-swatch-wrapper{
+    padding:0;
+  }
+  &::-webkit-color-swatch{
+    border:none;
   }
 }
