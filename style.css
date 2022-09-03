@@ -5,6 +5,31 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+}
+body{
+  color: #7f72a6;
+}
+.github{
+  position: fixed;
+  right: -32px;
+  top: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dadada;
+  transform:rotate(45deg);
+  width: 120px;
+  text-decoration: none;
+  padding: 5px;
+}
+.github svg{
+  margin-right: 4px;
+  color: #7147f1;
+}
+.github path{
+  fill: #7147f1;
+  /* stroke: #7147f1; */
 }
 footer{
   text-align: center;
