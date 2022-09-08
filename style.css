@@ -31,6 +31,10 @@ body{
   fill: #7147f1;
   /* stroke: #7147f1; */
 }
+.range-vertical{
+  width: 200px;
+  height: 200px;
+}
 footer{
   text-align: center;
   color: var(--gray);

@@ -11,3 +11,11 @@ const btnShow = document.getElementById('showDialog');
 btnShow.onclick = () =>{
   document.querySelector('dialog').show()
 }
+const inputFn = (e) =>{
+  e.target.setAttribute('value',e.target.value)
+  e.target.style.setProperty('--value',`${e.target.value}%`);
+}
+
+document.querySelector('#range01').oninput = inputFn
+document.querySelector('#range02').oninput = inputFn
+
