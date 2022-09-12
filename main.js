@@ -1,21 +1,22 @@
 import './style.css'
 import './src/styles/index.styl'
 
+function $(el){
+  return document.querySelector(el)
+}
 
+const templ = $('#templ');
+$('#app').appendChild(templ.content.cloneNode(true));
 
-const eles = document.getElementById('eles');
-console.log(eles.content)
-document.querySelector('#app').appendChild(eles.content.cloneNode(true));
-
-const btnShow = document.getElementById('showDialog');
+const btnShow = $('#showDialog');
 btnShow.onclick = () =>{
-  document.querySelector('dialog').show()
+  $('dialog').show()
 }
 const inputFn = (e) =>{
   e.target.setAttribute('value',e.target.value)
   e.target.style.setProperty('--value',`${e.target.value}%`);
 }
 
-document.querySelector('#range01').oninput = inputFn
-document.querySelector('#range02').oninput = inputFn
+$('#range01').oninput = inputFn
+$('#range02').oninput = inputFn
 

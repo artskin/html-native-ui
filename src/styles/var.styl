@@ -18,11 +18,17 @@ gray = #dadada;
   --shadow2:var(--primary-shadow2);
 
   --linear:linear-gradient(315deg,#6772FF 0,#00F9E5 100%);
+  --page-width:800px;
 }
 
 html{
   font-size: 14px;
   --size:14px;
+}
+@media screen and (max-width: 800px) {
+  :root{
+    --page-width:100%;
+  }
 }
 @media screen and (max-width: 1380px) {
   html{
