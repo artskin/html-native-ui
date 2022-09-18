@@ -12,6 +12,37 @@
       <h1>Native UI</h1>
     </div>
     <p>HTML5 Native UI —— 原生html5元素的UI展示。<br>充分利用html5的原生属性和方法</p>
+    <h4>自适应：<a href="https://cn.screenresolution.org/year-2022/" target="_blank" rel="noopener noreferrer">参考</a></h4>
+    <table>
+      <thead>
+        <tr>
+          <th>设备</th>
+          <th>分辨率</th>
+          <th>字体大小</th>
+          <th>主按钮大小</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>笔记本电脑：laptop-screen</td>
+          <td>&lt; 1380px</td>
+          <td>12px</td>
+          <td>28px</td>
+        </tr>
+        <tr>
+          <td>小型显示器：pc-screen</td>
+          <td>1380px ~ 1600px</td>
+          <td>14px</td>
+          <td>32px</td>
+        </tr>
+        <tr>
+          <td>大显示器：big-screen</td>
+          <td>&gt;1600px</td>
+          <td>16px</td>
+          <td>36px</td>
+        </tr>
+      </tbody>
+    </table>
     <br>
     <a class="github" href="https://github.com/artskin/html-native-ui" target="_blank">
       <svg height="18" width="18" aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
@@ -34,10 +65,10 @@
           <button data-type="danger">危险</button>
           <button data-type="linear">渐变</button>
           <br>Size:<br>
-          <button data-type="primary"><i class="ico-warning"></i> 主题</button>
-          <button data-type="primary" style="--size:18px"><i class="ico-warning"></i> 确定</button>
-          <button data-type="primary" style="--size:18px">确定</button>
-          <button data-type="primary" style="--size:22px"><i class="ico-warning"></i> 确定</button>
+          <button data-type="primary" style="--size:var(--size-small)">small</button>
+          <button data-type="primary"><i class="ico-warning"></i> default</button>
+          <button data-type="primary" style="--size:var(--size-big)"><i class="ico-warning"></i> big</button>
+          <button data-type="primary" style="--size:var(--size-large)"><i class="ico-warning"></i> large</button>
           <br>Disabled:<br>
           <button data-type="primary" disabled>确定</button>
         </div>
@@ -86,12 +117,12 @@
       <details open>
         <summary>input [type="text"]</summary>
         <div>
-          <form action="" style="--label-width:60px;--label-align:right">
+          <form action="" style="--label-width:4.3em;--label-align:right">
             <label for="user">用户名：</label>
-            <input id="user" type="text" placeholder="请输入" style="--size:14px">
+            <input id="user" type="text" placeholder="请输入">
             <br>
             <label for="pwd">密 码：</label>
-            <input id="pwd" type="password" placeholder="请输入" style="--size:14px">
+            <input id="pwd" type="password" placeholder="请输入">
           </form>
           Disabled:
           <input type="text" placeholder="请输入" disabled>
@@ -138,15 +169,30 @@
           <input id="date" type="color" value="#41d1ff" placeholder="请输入">
         </div>
       </details>
+      <hr>
+      <details open>
+        <summary>Color: input[type="file"]</summary>
+        <div>
+          <label for="file-upload1">选择文件:</label>
+          <input id="file-upload1" disabled type="file" value="" title="请选择上传文件" placeholder="请选择上传文件" />
+          <br>
+          <input id="file-upload2" style="--size:var(--size-small)" type="file" role="file-input" data-button="选择文件" value="" title="请选择" placeholder="请选择上传文件" />
+          <br>
+          <input id="file-upload3" type="file" role="file-input" data-button="选择多文件" value="" title="请选择" placeholder="请选择上传文件" multiple />
+          <br>
+          <input id="file-upload4" style="--size:var(--size-big)" type="file" role="file-input" data-button="选择文件夹" value="" title="请选择" placeholder="请选择上传文件夹" webkitdirectory directory  />
+          <br>
+        </div>
+      </details>
       <details open>
         <summary>Range: input[type="range"]</summary>
         <div>
 
-          <input id="range01" style="--value:60%;" type="range" step="10" min="0" max="100" value="60">
+          <input id="range01" style="--value:50%;" type="range" step="10" min="0" max="100" value="50">
           <br>
           
           <br>
-          <input type="range" style="--value:60%" step="1" min="0" max="100" value="60" disabled>
+          <input type="range" style="--value:50%" step="1" min="0" max="100" value="50" disabled>
           <div class="range-vertical">
             <input id="range02" data-dir="vertical" style="--value:60%" type="range" step="10" min="0" max="100" value="60">
           </div>

@@ -63,6 +63,14 @@ details dl dt{
 details dl dd{flex: 1;margin: 0;
  vertical-align: middle;
 }
+details>div input,
+details>div button{
+  margin-top:.3em;
+  margin-bottom: .3em;
+}
+details>div input[type="file"]{
+  width: 70%;
+}
 .center{
   text-align: center;
 }

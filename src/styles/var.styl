@@ -5,6 +5,11 @@ warning = #faad14;
 danger = #ff4d4f;
 gray = #dadada;
 
+// 1080 :1920 * 1080 -- 23.16%
+// 2k :2560 * 1440
+// 4k :3840 * 2160
+
+
 
 /* css vars */
 :root{
@@ -16,14 +21,18 @@ gray = #dadada;
   --radius-val:2px;
   --shadow:var(--primary-shadow);
   --shadow2:var(--primary-shadow2);
+  --primary-text:#fff;
 
   --linear:linear-gradient(315deg,#6772FF 0,#00F9E5 100%);
   --page-width:800px;
+  --backdrop-value: blur(16px) saturate(180%);
 }
 
 html{
   font-size: 14px;
   --size:14px;
+  --button-height:2.286em;
+  createSize(14px)
 }
 @media screen and (max-width: 800px) {
   :root{
@@ -34,6 +43,8 @@ html{
   html{
     font-size: 12px;
     --size:12px;
+    --size-small:10px;
+    --button-height:2.3334em;
   }
 }
 
@@ -41,5 +52,6 @@ html{
   html{
     font-size: 16px;
     --size:16px;
+    --button-height:2.25em;
   }
 }

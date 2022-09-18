@@ -6,7 +6,7 @@ button,input{
   transition:all .1s;
   
   vertical-align: middle;
-  height :2.3333em;
+  height :var(--button-height);
   box-sizing:border-box;
   &:active{
     box-shadow:0 0 0 .26em var(--primary-shadow2);
@@ -245,6 +245,9 @@ input[type=number]{
     display:block;
     //align-self:baseline;
   }
+  &::-webkit-outer-spin-button {
+    
+  }
 }
 
 
@@ -262,6 +265,7 @@ input[type="color"]{
   border:none;
   padding:0;
   //margin:0;
+  height: 2em;
   border-radius:var(--radius-val);
   overflow:hidden;
   vertical-align: middle;
@@ -297,12 +301,13 @@ input[type="range"]{
     content:  attr( value );
     left:calc(var(--value) - 1em);
     bottom: 1.5em;
-    background: rgba(100,100,100,.8);
+    background: rgba(100,100,100,.7);
+    backdrop-filter:var(--backdrop-value);
     width: 2em;
     text-align: center;
     height: 0;
     color: #fff;
-    padding: .1em 0;
+    padding: .1em .05em .1em 0;
     border-radius: .2em;
   }
   &::before{
@@ -313,7 +318,7 @@ input[type="range"]{
     height: 0;
     border-style: solid;
     border-width: .3em;
-    border-color: rgba(100,100,100,.8) transparent transparent transparent;
+    border-color: rgba(100,100,100,.7) transparent transparent transparent;
   }
   &:focus-within{
     &::before,
@@ -357,9 +362,137 @@ input[type="range"]{
   &[data-dir="vertical"]{
     transform: rotate(-90deg);
     transform-origin: right top;
+    right: 70px;
+    touch-action: none;
+    
   }
 }
 
 input[type="range" i]{
   //color: #fff;
+}
+
+input[type="file"]{
+  --input-color:var(--gray);
+  //background: var(--shadow2);
+  position: relative;
+  overflow: auto;
+  height: auto;
+  margin: 0;
+  
+  &:focus,
+  &:active{
+    box-shadow: none;
+    animation:none;
+    &::-webkit-file-upload-button{
+      box-shadow:0 0 0 .4em var(--primary-shadow2);
+    }
+  }
+  &:hover{
+    &::-webkit-file-upload-button{
+      background: var(--primary-hover);
+    }
+  }
+  &::-webkit-file-upload-button{
+    border: none;
+    border-radius:var(--radius-val);
+    //float: right;
+    background: var(--primary);
+    color: var(--primary-text);
+    margin-inline-end:0;
+    height: var(--button-height)
+    margin: 4px;
+    padding:0 var(--size);
+    vertical-align: middle;
+  }
+  &:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+  }
+}
+input[type="file"][role="file-input"]{
+  font-size:var(--size,14px);
+  padding: .3em;
+  overflow:visible;
+  height: var(--button-height);
+  box-sizing: content-box;
+  input{
+    display: none;
+  }
+  &::-webkit-file-upload-button{
+    float: right;
+    z-index: 1;
+    position: relative;
+    margin: 0;
+    display: none;
+  }
+  &::before,&::after{
+    height: var(--button-height);
+    //height: calc(100% - .6em) ;
+    //height: 100%;
+    position: absolute;
+    top: 0px;
+    
+    margin: .3em 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    box-sizing: border-box;
+  }
+  &::before{
+    content:attr(placeholder);
+    background: #fff;
+    color: var(--input-color);
+    
+    border: 1px solid var(--gray-hover);
+    //width: calc(100% - 100px );
+    //vertical-align: middle;
+    
+    border-radius: var(--radius-val);
+    line-height: calc(var(--button-height) - 2px);
+    width: calc(100% - .6em );
+    //left: 4px;
+    //padding-left: 4px;
+    text-indent: 4px;
+    
+    z-index:1;
+    pointer-events: none;
+  }
+  &:hover{
+    &::before{
+      border-color: var(--gray);
+    }
+  }
+  &:active,
+  &:focus{
+    &::before{
+      border-color: var(--primary);
+      box-shadow:0 0 0 .4em var(--primary-shadow2);
+    }
+    &::-webkit-file-upload-button{
+      box-shadow: none;
+    }
+    
+  }
+  &:active{
+    &::after{
+      padding-top: calc(0.5715em + 1px) ;
+    }
+  }
+  
+  &::after{
+    content:attr(data-button);
+    line-height: 1.1;
+    right: .3em;
+    padding: 0.5715em 1em;
+    
+    background: var(--primary);
+    z-index:2;
+    text-align: center;
+    color:#fff;
+    border-radius: 0  3px 3px 0;
+    box-shadow: -5px 0px 1px -2px #fff;
+    cursor: pointer;
+  }
+  
 }
