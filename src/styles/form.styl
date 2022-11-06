@@ -229,11 +229,12 @@ input[data-type="tick"]{
 input[type=text],
 input[type=number],
 input[type=password],
-input[type=date]{
+input[type=date],
+input[type=time]{
   border:1px solid var(--gray);
   padding:.4em .5em;
   border-radius:var(--radius-val);
-  &:focus{
+  &:focus,&.focus{
     border-color:var(--primary);
     box-shadow:0 0 0 .26em var(--shadow2);
   }
@@ -487,4 +488,10 @@ input[type="file"][role="file-input"]{
   
   
   
+}
+
+input[list]{
+  &:hover{
+    color: var(--primary)
+  }
 }

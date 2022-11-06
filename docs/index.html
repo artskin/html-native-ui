@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Html Native UI</title>
     <script type="module" crossorigin src="./assets/index.6798477a.js"></script>
-    <link rel="stylesheet" href="./assets/index.ac335606.css">
+    <link rel="stylesheet" href="./assets/index.280d10d2.css">
   </head>
   <body>
     <div class="website-title">
       <img src="./assets/favicon.4a77c41e.svg" height="36" alt="">
       <h1>Native UI</h1>
     </div>
-    <p>HTML5 Native UI —— 原生html5元素的UI展示。<br>充分利用html5的原生属性和方法</p>
+    <p>HTML5 Native UI<br>充分利用html5的原生属性和方法，通过css3实现原生html5元素的UI展示。</p>
     <h4>自适应：<a href="https://cn.screenresolution.org/year-2022/" target="_blank" rel="noopener noreferrer">参考</a></h4>
     <table>
       <thead>
@@ -67,6 +67,7 @@
           <button data-type="danger">危险</button>
           <button data-type="linear">渐变</button>
           <br>Size:<br>
+          <button data-type="primary" style="--size:var(--size-mini)">small</button>
           <button data-type="primary" style="--size:var(--size-small)">small</button>
           <button data-type="primary"><i class="ico-warning"></i> default</button>
           <button data-type="primary" style="--size:var(--size-big)"><i class="ico-warning"></i> big</button>
@@ -164,6 +165,15 @@
       </details>
       <hr>
       <details open>
+        <summary>DatePicker: input[type="time"]</summary>
+        <div>
+          <label for="time">选择时间:</label>
+          <input id="time" type="time" format="HH:mm:ss" placeholder="请输入">
+        </div>
+      </details>
+      <hr>
+
+      <details open>
         <summary>Color: input[type="color"]</summary>
         <div>
           <label for="date">颜色:</label>
@@ -176,7 +186,7 @@
         <summary>Color: input[type="file"]</summary>
         <div>
           <label for="file-upload1">选择文件:</label>
-          <input id="file-upload1" disabled type="file" value="" title="请选择上传文件" placeholder="请选择上传文件" />
+          <input id="file-upload1" type="file" value="" title="请选择上传文件" placeholder="请选择上传文件" />
           <br>
           <input id="file-upload2" style="--size:var(--size-small)" type="file" role="file-input" data-button="选择文件" value="" title="请选择" placeholder="请选择上传文件" />
           <br>

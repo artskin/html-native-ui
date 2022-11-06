@@ -65,6 +65,7 @@
           <button data-type="danger">危险</button>
           <button data-type="linear">渐变</button>
           <br>Size:<br>
+          <button data-type="primary" style="--size:var(--size-mini)">small</button>
           <button data-type="primary" style="--size:var(--size-small)">small</button>
           <button data-type="primary"><i class="ico-warning"></i> default</button>
           <button data-type="primary" style="--size:var(--size-big)"><i class="ico-warning"></i> big</button>
@@ -161,6 +162,15 @@
         </div>
       </details>
       <hr>
+      <details open>
+        <summary>DatePicker: input[type="time"]</summary>
+        <div>
+          <label for="time">选择时间:</label>
+          <input id="time" type="time" format="HH:mm:ss" placeholder="请输入">
+        </div>
+      </details>
+      <hr>
+
       <details open>
         <summary>Color: input[type="color"]</summary>
         <div>
