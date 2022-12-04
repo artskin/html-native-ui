@@ -6,7 +6,7 @@ button,input{
   transition:all .1s;
   
   vertical-align: middle;
-  height :var(--button-height);
+  height :var(--button-height,2.2em);
   box-sizing:border-box;
   &:active{
     box-shadow:0 0 0 .26em var(--primary-shadow2);
@@ -88,6 +88,9 @@ input[type="checkbox"] {
       border-top:.3em solid var(--primary);
     }
   }
+  &:hover{
+    border-color: var(--gray-active);
+  }
   &:disabled{
     background:var(--gray-hover);
     &:after{
@@ -141,6 +144,13 @@ input[type="checkbox"][role="switch"] {
       } 
     } 
   }
+  &:hover{
+    background-color: var(--gray-active)
+    &:checked {
+      background-color: var(--primary-active)
+    }
+    
+  }
 }
 
 //radio
@@ -165,8 +175,13 @@ input[type="radio"] {
     top:0;
   }
   &::before{
-    border:1px solid var(--primary);
+    border:1px solid var(--gray);
     z-index:0;
+  }
+  &:hover{
+    &::before{
+      border:1px solid var(--gray-active);
+    }
   }
   &::after{
     transform:scale(.1);
@@ -179,6 +194,9 @@ input[type="radio"] {
     }
   }
   &:checked{
+    &::before{
+      border:1px solid var(--primary);
+    }
     &::after{
       transform:scale(.6);
       background:var(--primary);
@@ -226,14 +244,18 @@ input[data-type="tick"]{
 }
 
 //text
-input[type=text],
-input[type=number],
-input[type=password],
-input[type=date],
-input[type=time]{
+// input[type=text],
+// input[type=number],
+// input[type=password],
+// input[type=date],
+// input[type=time]
+input:not([type=radio]){
   border:1px solid var(--gray);
   padding:.4em .5em;
   border-radius:var(--radius-val);
+  &:hover{
+    border-color:var(--gray-active);
+  }
   &:focus,&.focus{
     border-color:var(--primary);
     box-shadow:0 0 0 .26em var(--shadow2);
@@ -254,11 +276,17 @@ input[type=number]{
     
   }
 }
-
-
+input[type=tel]{
+  &:invalid{
+    border-color: var(--warning);
+    background-color: var(--danger);
+  }
+}
+:invalid {
+  background-color: #ff0000;
+}
 //form
 form{
-  line-height: 3;
   label{
     width: var(--label-width);
     text-align: var(--label-align,left)
@@ -430,7 +458,7 @@ input[type="file"][role="file-input"]{
   }
   &::before,&::after{
     height: var(--button-height);
-    line-height: var(--button-height);
+    line-height: calc(var(--button-height) - 1px);
     position: absolute;
     top: 0;
     margin: .3em 0;

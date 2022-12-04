@@ -2,12 +2,13 @@ dialog{
     top:50%;
     left: 50%;
     right: auto;
+    position: fixed;
     transform: translateX(-50%) translateY(-50%) scale(1);
     transition:all .2s;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     border-color: var(--primary);
     border-radius: calc(var(--radius-val) * 2);
-    z-index :1;
+    z-index :11;
 
     &:not([open]){
         display: block;
@@ -20,15 +21,19 @@ dialog{
         background: rgba(0,0,0,.2);
         left: 0;
         top: 0;
-        z-index :0;
+        z-index :10;
     }
 }
 
 details{
+    summary{
+        cursor: pointer;
+    }
     &[open]{
         summary{
             border-bottom: px dashed var(--gray)
             padding-bottom: .6em;
+            
         }
         & > summary:first-of-type{
             list-style-type: disclosure-open;
