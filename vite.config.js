@@ -13,6 +13,13 @@ export default defineConfig({
     },
     base:'./',
     build:{
-      outDir:'docs'
+      outDir:'docs',
+      rollupOptions:{
+        output:{
+          assetFileNames:`html-native-ui.min.css`,
+          entryFileNames:`js/demo.js`,
+          //dir:"components"
+        }
+      }
     }
   })

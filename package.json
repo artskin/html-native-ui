@@ -1,7 +1,20 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "html5-native-ui",
+  "private": false,
+  "version": "0.1.1",
+  "description": "Upgrade default UI style for html5 elements",
+  "main": "./docs/html-native-ui.css",
+  "files": [
+    "docs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artskin/html-native-ui.git"
+  },
+  "author": {
+    "name": "Artskin"
+  },
+  "license": "Hippocratic-2.1",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",

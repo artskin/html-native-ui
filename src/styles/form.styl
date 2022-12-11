@@ -244,12 +244,14 @@ input[data-type="tick"]{
 }
 
 //text
-// input[type=text],
-// input[type=number],
-// input[type=password],
-// input[type=date],
-// input[type=time]
-input:not([type=radio]){
+input[type=text],
+input[type=number],
+input[type=password],
+input[type=date],
+input[type=time],
+input[type=tel],
+input[type=url],
+input[type=email]{
   border:1px solid var(--gray);
   padding:.4em .5em;
   border-radius:var(--radius-val);
@@ -276,15 +278,7 @@ input[type=number]{
     
   }
 }
-input[type=tel]{
-  &:invalid{
-    border-color: var(--warning);
-    background-color: var(--danger);
-  }
-}
-:invalid {
-  background-color: #ff0000;
-}
+
 //form
 form{
   label{
@@ -523,3 +517,111 @@ input[list]{
     color: var(--primary)
   }
 }
+
+// input[type=tel]{
+//   &:invalid{
+//     border-color: var(--warning);
+//     background-color: var(--danger);
+//   }
+// }
+
+form{
+  label:is(:has( + :required)){
+    &::before{
+      content: "* "
+      color: red;
+      vertical-align: middle;
+    }
+  }
+  &.validate{
+    &:invalid {
+      // outline: 5px solid #ffdddd;
+      content: 'no'
+    }
+    &:valid {
+      content: 'yes'
+      //outline: 5px solid rgb(178, 238, 178);
+    }
+    .valid-tips{
+      vertical-align: middle;
+    }
+    /* 可选定任意无效的<input> */
+    input{
+      position: relative;
+      z-index :0;
+      &:invalid{
+        border-color: red;
+        position: relative;
+        & + .valid-tips{
+          &::before{
+            content: '请与所请求的格式保持一致。'; 
+            color: red;
+          }
+        }
+      }
+      &:valid{
+        //border-color: green;
+        & + .valid-tips{
+          &::before{
+            content: ''; 
+            color: green;
+            display: inline-block;
+            width: .8em;
+            height: .4em;
+            border-left: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(-45deg);
+            margin-left: .3em;
+          }
+        }
+      }
+      &:placeholder-shown{
+        & + .valid-tips{
+          &::before{
+            content: '请填写此字段。'; 
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+input.valid{
+      position: relative;
+      z-index :0;
+      &:invalid{
+        border-color: red;
+        position: relative;
+        & + .valid-tips{
+          &::before{
+            content: '请与所请求的格式保持一致。'; 
+            color: red;
+          }
+        }
+      }
+      &:valid{
+        //border-color: green;
+        & + .valid-tips{
+          &::before{
+            content: ''; 
+            color: green;
+            display: inline-block;
+            width: .8em;
+            height: .4em;
+            border-left: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(-45deg);
+            margin-left: .3em;
+          }
+        }
+      }
+      &:placeholder-shown{
+        & + .valid-tips{
+          &::before{
+            content: '请填写此字段。'; 
+          }
+        }
+      }
+      
+    }

@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./images/._favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Html Native UI</title>
   </head>
   <body>
     <div class="website-title">
-      <img src="./favicon.svg" height="36" alt="">
+      <img src="./images/._favicon.svg" height="36" alt="">
       <h1>Native UI</h1>
     </div>
     <p>HTML5 Native UI<br>充分利用html5的原生属性和方法，通过css3实现原生html5元素的UI展示。</p>
@@ -65,7 +65,7 @@
           <button data-type="danger">危险</button>
           <button data-type="linear">渐变</button>
           <br>Size:<br>
-          <button data-type="primary" style="--size:var(--size-mini)">small</button>
+          <button data-type="primary" style="--size:var(--size-mini)">mini</button>
           <button data-type="primary" style="--size:var(--size-small)">small</button>
           <button data-type="primary"><i class="ico-warning"></i> default</button>
           <button data-type="primary" style="--size:var(--size-big)"><i class="ico-warning"></i> big</button>
@@ -76,41 +76,69 @@
       </details>
       <hr>
       <details open>
-        <summary>Checkbox: input [type="checkbox"]</summary>
-        <div>
-          <input type="checkbox">
-          <br>Size:<br>
-          <input type="checkbox" checked style="--size:14px">
-          <input type="checkbox" style="--size:18px">
-          <input type="checkbox" style="--size:22px">
-          <br>Disabled:<br>
-          <input type="checkbox" disabled>
-        </div>
-      </details>
-      <hr>
-      <details open>
         <summary>Switch: input [type="checkbox" role="switch"] </summary>
         <div>
-          <input role="switch" type="checkbox">
+          <input role="switch" type="checkbox"> Disabled:
+          <input role="switch" type="checkbox" disabled>
           <br>Size:<br>
           <input role="switch" type="checkbox" checked style="--size:14px">
           <input role="switch" type="checkbox" checked style="--size:18px">
           <input role="switch" type="checkbox" style="--size:22px">
-          <br>Disabled:<br>
-          <input role="switch" type="checkbox" disabled>
+          <br>
         </div>
       </details>
       <hr>
       <details open>
+        <summary>FileUpload: input[type="file"]</summary>
+        <div>
+          <label for="file-upload1">选择文件:</label>
+          <input id="file-upload1" type="file" value="" title="请选择上传文件" placeholder="请选择上传文件" />
+          <br>
+          <input id="file-upload2" style="--size:var(--size-small)" type="file" role="file-input" data-button="选择文件" value="" title="请选择" placeholder="请选择上传文件" />
+          <br>
+          <input id="file-upload3" type="file" role="file-input" data-button="选择多文件" value="" title="请选择" placeholder="请选择上传文件" multiple />
+          <br>
+          <input id="file-upload4" style="--size:var(--size-big)" type="file" role="file-input" data-button="选择文件夹" value="" title="请选择" placeholder="请选择上传文件夹" webkitdirectory directory  />
+          <br>
+        </div>
+      </details>
+      <details open>
+        <summary>Range: input[type="range"]</summary>
+        <div>
+
+          <input id="range01" style="--value:50%;" type="range" step="10" min="0" max="100" value="50">
+          <br>
+          
+          <br>
+          <input type="range" style="--value:50%" step="1" min="0" max="100" value="50" disabled>
+          <div class="range-vertical">
+            <input id="range02" data-dir="vertical" style="--value:60%" type="range" step="10" min="0" max="100" value="60">
+          </div>
+        </div>
+      </details>
+      <hr>
+      <details open>
+        <summary>Checkbox: input [type="checkbox"]</summary>
+        <div>
+          <input type="checkbox"> <input type="checkbox" disabled>
+          <br>Size:<br>
+          <input type="checkbox" checked style="--size:14px">
+          <input type="checkbox" style="--size:18px">
+          <input type="checkbox" style="--size:22px">
+        </div>
+      </details>
+      
+      <hr>
+      <details open>
         <summary>Radio: input [type="radio"]</summary>
         <div>
-          <input type="radio">
+          <input type="radio"> Disabled:
+          <input name="sl" type="radio" disabled data-type="tick">
           <br>Size:<br>
           <input name="sl" type="radio" checked  style="--size:14px">
           <input name="sl" type="radio" style="--size:18px">
           <input name="sl" type="radio" data-type="tick" style="--size:22px">
-          <br>Disabled:<br>
-          <input name="sl" type="radio" disabled data-type="tick">
+          <br>
         </div>
       </details>
       
@@ -118,17 +146,42 @@
       <details open>
         <summary>input [type="text"]</summary>
         <div>
-          <form action="" style="--label-width:4.3em;--label-align:right">
-            <label for="user">用户名：</label>
-            <input id="user" type="text" placeholder="请输入">
-            <br>
-            <label for="pwd">密 码：</label>
-            <input id="pwd" type="password" placeholder="请输入">
-            <input id="pwd" type="tel" placeholder="请输入手机号">
-            <input id="pwd" type="mail" placeholder="邮箱">
-          </form>
+        
+          Text:<input type="text" placeholder="请输入">
+          <br>
+          Password:<input type="password" autocomplete placeholder="请输入">
+          <br>
           Disabled:
           <input type="text" placeholder="请输入" disabled>
+        </div>
+      </details>
+      <hr>
+      <details open>
+        <summary>Form: required/pattern/:valid/:invalid</summary>
+        <div>
+          <form action="" style="--label-width:6.3em;--label-align:right">
+            <label for="user">用户名：</label>
+            <input id="user" required type="text" placeholder="请输入">
+            <span class="valid-tips"></span>
+            <br>
+            <label for="pwd">密 码：</label>
+            <input id="pwd" type="password" autocomplete placeholder="请输入">
+
+            <br>
+            <label for="phone">手机号：</label>
+            <input id="phone" required type="tel" pattern="^1[3-9]\d{9}$" placeholder="请输入手机号" />
+            <span class="valid-tips"></span>
+            <br>
+            <label for="email">邮箱：</label>
+            <input id="email" type="email" placeholder="邮箱">
+            <br>
+            <label for="url">URL：</label>
+            <input id="url" type="url" placeholder="链接">
+            <br>
+            <label></label>
+            <button id="reset" type="reset">重置</button>
+            <button id="submit" data-type="primary" type="button">提交</button>
+          </form>
         </div>
       </details>
       
@@ -181,35 +234,7 @@
           <input id="date" type="color" value="#41d1ff" placeholder="请输入">
         </div>
       </details>
-      <hr>
-      <details open>
-        <summary>Color: input[type="file"]</summary>
-        <div>
-          <label for="file-upload1">选择文件:</label>
-          <input id="file-upload1" type="file" value="" title="请选择上传文件" placeholder="请选择上传文件" />
-          <br>
-          <input id="file-upload2" style="--size:var(--size-small)" type="file" role="file-input" data-button="选择文件" value="" title="请选择" placeholder="请选择上传文件" />
-          <br>
-          <input id="file-upload3" type="file" role="file-input" data-button="选择多文件" value="" title="请选择" placeholder="请选择上传文件" multiple />
-          <br>
-          <input id="file-upload4" style="--size:var(--size-big)" type="file" role="file-input" data-button="选择文件夹" value="" title="请选择" placeholder="请选择上传文件夹" webkitdirectory directory  />
-          <br>
-        </div>
-      </details>
-      <details open>
-        <summary>Range: input[type="range"]</summary>
-        <div>
-
-          <input id="range01" style="--value:50%;" type="range" step="10" min="0" max="100" value="50">
-          <br>
-          
-          <br>
-          <input type="range" style="--value:50%" step="1" min="0" max="100" value="50" disabled>
-          <div class="range-vertical">
-            <input id="range02" data-dir="vertical" style="--value:60%" type="range" step="10" min="0" max="100" value="60">
-          </div>
-        </div>
-      </details>
+      
       <hr>
       <details open>
         <summary>Progress: meter</summary>
