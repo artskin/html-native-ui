@@ -1,0 +1,40 @@
+// fn
+.colorGroup(@key,@value){
+  @{key}: @value;
+  @{key}-hover: lighten(@value, 5%);
+  @{key}-active: darken(@value, 5%);
+  @{key}-opacity: rgba(@value, .5);
+  @{key}-shadow: rgba(@value, .18);
+  @{key}-shadow2:rgba(@value, .09);
+}
+.buttonFn(@type){
+  border:1px solid var(@type);
+  background:var(@type);
+  color:#fff;
+  --shadow:var(--@{type}-shadow);
+  --shadow2:var(--@{type}-shadow2);
+  &:hover{
+    background-color:var(~'@{type}-hover');
+    border-color:var(~'@{type}-hover');
+  }
+  &:active{
+    background-color:var(@type + -active);
+    border-color:var(@type + -active);
+  }
+  &:disabled{
+    opacity:.4;
+  }
+}
+
+.createButton(@type,@value){
+  button[data-type=@{type}]{
+    .buttonFn(@value);
+  }
+}
+
+.createSize(@value){
+  --size-small:@value - 2px;
+  --size-default:@value;
+  --size-big:@value + 2px;
+  --size-large:@value + 4px;
+}

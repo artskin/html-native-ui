@@ -1,11 +1,14 @@
 {
   "name": "html5-native-ui",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.6",
   "description": "Upgrade default UI style for html5 elements",
-  "main": "./docs/html-native-ui.css",
+  "main": "lib/html-native-ui.min.css",
+  "types": "lib/index.d.ts",
   "files": [
-    "docs"
+    "package.json",
+    "lib/html-native-ui.min.css",
+    "lib/index.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -18,12 +21,13 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
+    "lib": "vite build --outDir=lib/",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "vite": "3.0.3"
-  },
   "dependencies": {
-    "stylus": "^0.58.1"
+    "less": "^4.1.3"
+  },
+  "devDependencies": {
+    "vite": "^3.2.5"
   }
 }

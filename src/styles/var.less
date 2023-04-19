@@ -1,22 +1,23 @@
-@import 'fn'
-//stylus var
-primary = rgb(97, 50, 239);
-warning = #faad14;
-danger  = #ff4d4f;
-gray    = #e1e2e3;
+@import 'fn';
+
+// less var
+@primary : #6948ee;
+@warning : #faad14;
+@danger  : #ff4d4f;
+@gray    : #e1e2e3;
 
 // 1080 :1920 * 1080 -- 23.16%
-// 2k :2560 * 1440
-// 4k :3840 * 2160
+// 2k   :2560 * 1440
+// 4k   :3840 * 2160
 
 
 /* css vars */
 :root{
-  colorGroup(--primary,primary)
-  colorGroup(--warning,warning)
-  colorGroup(--danger,danger)
-  colorGroup(--gray,gray)
-  colorGroup(--linear-primary,gray)
+  .colorGroup(--primary,@primary);
+  .colorGroup(--warning,@warning);
+  .colorGroup(--danger,@danger);
+  .colorGroup(--gray,@gray);
+  .colorGroup(--linear-primary,@gray);
   --radius-val:2px;
   --shadow:var(--primary-shadow);
   --shadow2:var(--primary-shadow2);
@@ -32,7 +33,7 @@ html{
   --size:14px;
   --size-mini:8px;
   --button-height:2.286em;
-  createSize(14px)
+  .createSize(14px);
 }
 @media screen and (max-width: 800px) {
   :root{

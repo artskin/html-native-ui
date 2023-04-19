@@ -1,5 +1,5 @@
-import './demo.css'
-import './src/styles/index.styl'
+//import '/demo.css?inline'
+import './src/styles/index.less'
 
 function $(el){
   return document.querySelector(el)
@@ -43,6 +43,14 @@ const fileChanged = (e) =>{
   el.style.setProperty('--input-color','inherit')
 }
 
+const inputSelect = (e) =>{
+  const el = e.target;
+  //console.log(el.list.children)
+  el.setAttribute('value',e.target.value);
+  
+  
+}
+
 
 document.onreadystatechange = (ev) =>{
   if(document.readyState ==='complete'){
@@ -78,6 +86,13 @@ document.onreadystatechange = (ev) =>{
       $all('form input').forEach(input=>{
         input.classList.remove('valid');
       })
+    }
+    $('#ice-choice').oninput = inputSelect;
+    $('#ice-choice').nextSibling.onclick = (e) =>{
+      if(e.target.classList.contains('clear')){
+        $('#ice-choice').value = ''
+        $('#ice-choice').setAttribute('value','');
+      }
     }
   }
 }

@@ -20,6 +20,7 @@ export default defineConfig({
           entryFileNames:`js/demo.js`,
           //dir:"components"
         }
-      }
+      },
+      cssCodeSplit:false
     }
   })

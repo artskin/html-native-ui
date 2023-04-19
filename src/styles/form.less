@@ -40,16 +40,15 @@ button,input[type="button"] {
   &:focus-visible{
     //border: none;
     outline:none;
-    
   }
   outline:none;
 }
-createButton('primary',--primary)
-createButton('warning',--warning)
-createButton('danger',--danger)
-createButton('linear',--linear)
+.createButton('primary',--primary);
+.createButton('warning',--warning);
+.createButton('danger',--danger);
+.createButton('linear',--linear);
 button[size="big"]{
-  --size:22px
+  --size:22px;
 }
 
 //checkbox
@@ -145,7 +144,7 @@ input[type="checkbox"][role="switch"] {
     } 
   }
   &:hover{
-    background-color: var(--gray-active)
+    background-color: var(--gray-active);
     &:checked {
       background-color: var(--primary-active)
     }
@@ -230,10 +229,10 @@ input[data-type="tick"]{
 }
 @keyframes spread{
   0%{
-    box-shadow:0 0 0 0 rgba(0 0 0,0);
+    box-shadow:0 0 #0000;
   }
   30%{
-    box-shadow:0 0 0 0 rgba(0 0 0,0);
+    box-shadow:0 0 #0000;
   }
   60%{
     box-shadow:0 0 0 .3em var(--shadow);
@@ -340,7 +339,7 @@ input[type="range"]{
   &::before{
     content: '';
     left:calc(var(--value) - .3em);
-    bottom: .9em;
+    bottom: calc(1em - 1px);
     width:0;
     height: 0;
     border-style: solid;
@@ -423,7 +422,7 @@ input[type="file"]{
     border-radius:var(--radius-val);
     background: var(--primary);
     color: var(--primary-text);
-    height: var(--button-height)
+    height: var(--button-height);
     margin: .3em;
     padding: 0 var(--size);
     vertical-align: middle;
@@ -507,14 +506,49 @@ input[type="file"][role="file-input"]{
       padding-top: 1px;
     }
   }
-  
-  
-  
 }
 
 input[list]{
   &:hover{
-    color: var(--primary)
+    //color: var(--primary)
+  }
+}
+input[list][value]:not([value='']){
+  border-width: 1px;
+  // &::after{} input 不支持伪元素
+  &::-webkit-calendar-picker-indicator{
+    display: none!important;
+  }
+  
+  & + i{
+    position: relative;
+    cursor: pointer;
+    margin-left: -1.5em;
+    width: .9em;
+    height: .9em;
+    display: inline-block;
+    vertical-align: middle;
+    &:hover{
+      --gray-active:var(--primary);
+    }
+    &::before,&::after{
+      content: ' ';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: .4em;
+      width: .8em;
+      height: 1px;
+      background-color: var(--gray-active);
+      transform-origin: center center;
+    }
+    &::before{
+      transform: rotate(45deg);
+    }
+    &::after{
+      transform: rotate(-45deg);
+    }
+    
   }
 }
 
@@ -528,7 +562,7 @@ input[list]{
 form{
   label:is(:has( + :required)){
     &::before{
-      content: "* "
+      content: "* ";
       color: red;
       vertical-align: middle;
     }

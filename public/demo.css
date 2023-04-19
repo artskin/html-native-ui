@@ -1,0 +1,79 @@
+:root{
+  --title-bg:-webkit-linear-gradient( 120deg, #6633FF 30%, #41d1ff )
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+body{
+  color: #7f72a6;
+  width: var(--page-width);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.github{
+  position: fixed;
+  right: -32px;
+  top: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dadada;
+  transform:rotate(45deg);
+  width: 120px;
+  text-decoration: none;
+  padding: 5px;
+}
+.github svg{
+  margin-right: 4px;
+  color: #7147f1;
+}
+.github path{
+  fill: #7147f1;
+  /* stroke: #7147f1; */
+}
+.range-vertical{
+  width: 200px;
+  height: 150px;
+}
+footer{
+  text-align: center;
+  color: var(--gray);
+}
+.website-title{text-align: center;display: flex;
+  padding-top: 20px;
+justify-content: center;align-items: center;}
+.website-title h1{
+  background: var(--title-bg);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-left: 10px;
+}
+details dl{
+  display: flex;
+}
+details dl dt{
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+details dl dd{flex: 1;margin: 0;
+ vertical-align: middle;
+}
+details>div input,
+details>div button{
+  margin-top:.3em;
+  margin-bottom: .3em;
+}
+details>div input[type="file"]{
+  width: 70%;
+}
+.center{
+  text-align: center;
+}
+.hide{
+  display: none;
+}
