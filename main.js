@@ -75,7 +75,7 @@ document.onreadystatechange = (ev) =>{
       const validStyle = window.getComputedStyle($('form'),':valid')
       console.log(validStyle.getPropertyValue('content'))
     }
-    console.log($all('form input'))
+    //console.log($all('form input'))
     $all('form input').forEach(input=>{
       input.onblur=(ev)=>{
         console.log(ev.target)

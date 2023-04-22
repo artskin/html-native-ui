@@ -12,6 +12,7 @@ body{
   width: var(--page-width);
   margin: 0 auto;
   box-sizing: border-box;
+  padding: 15px;
 }
 .github{
   position: fixed;
